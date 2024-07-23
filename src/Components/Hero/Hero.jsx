@@ -3,21 +3,31 @@ import "./Hero.css";
 import fimage from "/Users/khachkarapetyan/Desktop/skills/src/img/fone.jpeg";
 import React from "react";
 import { memo } from "react";
+import { motion } from "framer-motion"
 
-export default memo( function Hero() {
+export default memo(function Hero() {
   return (
     <section className="hero">
-
       <div className="heroCont">
-      <div className="blurgrad" />
+        <motion.div
+        initial={{y:"-6rem", opacity: "0"}}
+        animate={{y:"0", opacity: "1"}}
+        transition={{duration: 4, type: "spring"}}
+
+        
+        className="blurgrad" />
         {/* lefts side*/}
         <div className="hero-left">
           <div className="hero-title">
-            <h1>
-              <div className="circle" />
+            <motion.h1
+            initial={{y:"2rem", opacity: "0"}}
+            animate={{y:"0", opacity: "1"}}
+            transition={{duration: 4, type: "spring"}}
+
+            >
               Find Your <br />
               Dream Home here!
-            </h1>
+            </motion.h1>
           </div>
           <div className="hero-desc">
             <span>Just find your dream and enjoy</span>
@@ -41,12 +51,16 @@ export default memo( function Hero() {
 
         {/* Riught side*/}
         <div className="hero-right">
-          <div className="imgCont">
+          <motion.div 
+          initial={{x:"2rem", opacity: "0"}}
+          animate={{x:"0", opacity: "1"}}
+          transition={{duration: 4, type: "spring"}}
+
+          className="imgCont">
             <img src={fimage} alt="img"></img>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
   );
-}
-)
+});
