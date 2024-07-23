@@ -1,22 +1,30 @@
-import logo from './logo.svg';
+
 import './App.css';
-import Cart from './Cart/cart';
-import Prod from './Product/product';
-import React, { useState } from 'react';
+
+import React from 'react';
+import Hero from './Components/Hero/Hero';
+import Nav from './Components/Nav/Nav';
+import Companies from './Components/Companies/Companies';
+import ProductList from './Components/ProductList/ProductList';
+import Value from './Components/Value/Value';
+import Contact from './Components/Contact/Contact';
+import GetStarted from './Components/GetStart/GetStart';
+import Footer from './Footer/Footer';
 
 
 function App() {
-let data = [{has:true, name:"aziz"},{has:false, name:"baziz"},{has:true, name:"gaziz"},]
-const [value, setValue]= useState(0)
-const increment = () => {
-  setValue(value+1)
-}
+
+
   return (
     <div className="App">
-      
-      <Cart value={value}/>
-      {data.map((item)=><Prod mess={item} increment={increment}/>)}
-
+     <Nav />
+     <Hero />
+     <Companies />
+     <ProductList />
+     <Value />
+     <Contact />
+     <GetStarted />
+     <Footer />
     </div>
   );
 }
