@@ -1,17 +1,29 @@
-import logo from "/Users/khachkarapetyan/Desktop/skills/src/img/logo.jpeg"
+import logo from "../../img/logo.svg"
 import "./Nav.css"
+import { Link } from "react-router-dom"
+
+
+
 export default function Nav() {
     return (
         <div className="navbar">
             <div className="logo">
-                <img className="logo" src={logo} alt="logo" width={50} />
+                <Link to="/">
+
+                <img className="logo" src={logo} alt="logo"  />
+
+                </Link>
             </div>
-            <a id="little" href="">Menu</a>
+            <li id="little" href="">Menu</li>
             <div className="menu">
-                <a href="">Appartements</a>
-                <a href="">Contact Us</a>
-                <a href="">Images</a>
-                <a><button className="primaryButton">Get Start</button></a>
+                <ul>
+
+                <li>Appartements</li>
+                <li>Contact Us</li>
+                <li><Link className="lil" to="/src/Images">Images</Link></li>
+                <li><button className="primaryButton">Get Start</button></li>
+
+                </ul>
             </div>
             <button id="little-btn" className="primaryButton">Get Start</button>
         </div>
